@@ -32,20 +32,338 @@ export default function HomePage() {
       setFileName(e.target.files[0].name);
     }
   }
+
+  const aiAnalysisData = {
+    "structureAnalysisData": {
+        "totalProjectEffort": 59,
+        "optimizedModules": [
+            {
+                "module_id": "DESIGN_001",
+                "module_name": "Service Request and Complaint Tracking UX",
+                "category": "DESIGN",
+                "sub_tasks": [
+                    {
+                        "task_name": "Design tracking screen layout and ticket validation flow in Figma"
+                    }
+                ],
+                "requirement_analysis_hours": 1,
+                "basic_setup_hours": 2,
+                "task_effort_hours": 6,
+                "total_estimated_hours": 10
+            },
+            {
+                "module_id": "API_001",
+                "module_name": "Ticket Validation and Status APIs",
+                "category": "API",
+                "sub_tasks": [
+                    {
+                        "task_name": "Implement API to validate ticket ID against CRMNXT"
+                    }
+                ],
+                "requirement_analysis_hours": 2,
+                "basic_setup_hours": 4,
+                "task_effort_hours": 9,
+                "total_estimated_hours": 15
+            },
+            {
+                "module_id": "FRONTEND_001",
+                "module_name": "Website Tracking Interface",
+                "category": "FRONTEND",
+                "sub_tasks": [
+                    {
+                        "task_name": "Develop service request and complaint tracking UI with API integration"
+                    }
+                ],
+                "requirement_analysis_hours": 3,
+                "basic_setup_hours": 5,
+                "task_effort_hours": 13,
+                "total_estimated_hours": 21
+            },
+            {
+                "module_id": "INTEGRATION_001",
+                "module_name": "CRMNXT Integration",
+                "category": "INTEGRATION",
+                "sub_tasks": [
+                    {
+                        "task_name": "Integrate CRMNXT case status, comments, and attachments"
+                    }
+                ],
+                "requirement_analysis_hours": 0,
+                "basic_setup_hours": 1,
+                "task_effort_hours": 3,
+                "total_estimated_hours": 4
+            },
+            {
+                "module_id": "TEST_001",
+                "module_name": "Functional and Regression Testing",
+                "category": "TESTING",
+                "sub_tasks": [
+                    {
+                        "task_name": "Validate tracking flow, API responses, and attachment downloads"
+                    }
+                ],
+                "requirement_analysis_hours": 1,
+                "basic_setup_hours": 2,
+                "task_effort_hours": 6,
+                "total_estimated_hours": 10
+            }
+        ],
+        "roadmap": [
+            {
+                "id": "SPRINT_1",
+                "title": "UX Design and Integration Analysis",
+                "description": "This sprint delivers finalized UX designs for the service request and complaint tracking feature and completes impact analysis for CRMNXT integration, defining validation rules, data mapping, and user interaction flows.",
+                "sprint": "Sprint 1",
+                "sprint_module": "DESIGN",
+                "priority": "HIGH",
+                "effort_percentage": 15,
+                "acceptanceCriteria": [
+                    "Figma designs approved for tracking interface and validation flow"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Prepare and review UX designs and integration specifications"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_2",
+                "title": "Backend API and CRMNXT Integration",
+                "description": "This sprint focuses on implementing and modifying backend APIs required to validate ticket IDs with CRMNXT, retrieve ticket status, comments, and attachments while ensuring backward compatibility with existing services.",
+                "sprint": "Sprint 2",
+                "sprint_module": "API",
+                "priority": "HIGH",
+                "effort_percentage": 35,
+                "acceptanceCriteria": [
+                    "APIs successfully validate ticket IDs and fetch CRMNXT data"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Develop and test CRMNXT validation and data retrieval APIs"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_3",
+                "title": "Frontend Implementation and Integration",
+                "description": "This sprint delivers the website user interface for service request and complaint tracking, integrating backend APIs to display ticket status, comments, and downloadable attachments with proper validation handling.",
+                "sprint": "Sprint 3",
+                "sprint_module": "FRONTEND",
+                "priority": "HIGH",
+                "effort_percentage": 30,
+                "acceptanceCriteria": [
+                    "Users can track tickets and view status, comments, and attachments"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Implement UI components and integrate with backend APIs"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_4",
+                "title": "Testing and Stabilization",
+                "description": "This sprint ensures production readiness through functional testing, regression validation of impacted flows, and stabilization of the CRMNXT integration to ensure reliable ticket tracking across scenarios.",
+                "sprint": "Sprint 4",
+                "sprint_module": "TESTING",
+                "priority": "MEDIUM",
+                "effort_percentage": 20,
+                "acceptanceCriteria": [
+                    "All test cases pass and no regression issues remain"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Execute functional, integration, and regression testing"
+                    }
+                ]
+            }
+        ]
+    },
+    "aiAgentAnalysisData": {
+        "project_type": "ENHANCEMENT",
+        "ui_parameters": {
+            "screens": {
+                "new": 1,
+                "modified": 1
+            },
+            "forms": {
+                "simple": 1,
+                "multi_step": 0,
+                "conditional": 1
+            },
+            "ui_complexity": "MEDIUM",
+            "estimated_ui_effort_hours": 120
+        },
+        "backend_parameters": {
+            "apis": {
+                "new": 2,
+                "modified": 1
+            },
+            "query_complexity": "MEDIUM",
+            "estimated_backend_effort_hours": 180
+        },
+        "database_parameters": {
+            "db": {
+                "new_tables": 0,
+                "altered_tables": 0
+            },
+            "estimated_database_effort_hours": 24
+        },
+        "integration_parameters": {
+            "integration": {
+                "external_apis": 1,
+                "cron_jobs": 0
+            },
+            "estimated_integration_effort_hours": 96
+        },
+        "testing_parameters": {
+            "new_test_cases": 20,
+            "affected_flows": 3
+        },
+        "risk_parameters": {
+            "requirement_clarity": "PARTIAL",
+            "legacy_coupling": "MEDIUM",
+            "dependency_risk": "MEDIUM"
+        },
+        "modules": [
+            {
+                "module_id": "DESIGN_001",
+                "module_name": "Service Request and Complaint Tracking UX",
+                "category": "DESIGN",
+                "sub_tasks": [
+                    {
+                        "task_name": "Design tracking screen layout and ticket validation flow in Figma"
+                    }
+                ]
+            },
+            {
+                "module_id": "API_001",
+                "module_name": "Ticket Validation and Status APIs",
+                "category": "API",
+                "sub_tasks": [
+                    {
+                        "task_name": "Implement API to validate ticket ID against CRMNXT"
+                    }
+                ]
+            },
+            {
+                "module_id": "FRONTEND_001",
+                "module_name": "Website Tracking Interface",
+                "category": "FRONTEND",
+                "sub_tasks": [
+                    {
+                        "task_name": "Develop service request and complaint tracking UI with API integration"
+                    }
+                ]
+            },
+            {
+                "module_id": "INTEGRATION_001",
+                "module_name": "CRMNXT Integration",
+                "category": "INTEGRATION",
+                "sub_tasks": [
+                    {
+                        "task_name": "Integrate CRMNXT case status, comments, and attachments"
+                    }
+                ]
+            },
+            {
+                "module_id": "TEST_001",
+                "module_name": "Functional and Regression Testing",
+                "category": "TESTING",
+                "sub_tasks": [
+                    {
+                        "task_name": "Validate tracking flow, API responses, and attachment downloads"
+                    }
+                ]
+            }
+        ],
+        "roadmap": [
+            {
+                "id": "SPRINT_1",
+                "title": "UX Design and Integration Analysis",
+                "description": "This sprint delivers finalized UX designs for the service request and complaint tracking feature and completes impact analysis for CRMNXT integration, defining validation rules, data mapping, and user interaction flows.",
+                "sprint": "Sprint 1",
+                "sprint_module": "DESIGN",
+                "priority": "HIGH",
+                "effort_percentage": 15,
+                "acceptanceCriteria": [
+                    "Figma designs approved for tracking interface and validation flow"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Prepare and review UX designs and integration specifications"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_2",
+                "title": "Backend API and CRMNXT Integration",
+                "description": "This sprint focuses on implementing and modifying backend APIs required to validate ticket IDs with CRMNXT, retrieve ticket status, comments, and attachments while ensuring backward compatibility with existing services.",
+                "sprint": "Sprint 2",
+                "sprint_module": "API",
+                "priority": "HIGH",
+                "effort_percentage": 35,
+                "acceptanceCriteria": [
+                    "APIs successfully validate ticket IDs and fetch CRMNXT data"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Develop and test CRMNXT validation and data retrieval APIs"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_3",
+                "title": "Frontend Implementation and Integration",
+                "description": "This sprint delivers the website user interface for service request and complaint tracking, integrating backend APIs to display ticket status, comments, and downloadable attachments with proper validation handling.",
+                "sprint": "Sprint 3",
+                "sprint_module": "FRONTEND",
+                "priority": "HIGH",
+                "effort_percentage": 30,
+                "acceptanceCriteria": [
+                    "Users can track tickets and view status, comments, and attachments"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Implement UI components and integrate with backend APIs"
+                    }
+                ]
+            },
+            {
+                "id": "SPRINT_4",
+                "title": "Testing and Stabilization",
+                "description": "This sprint ensures production readiness through functional testing, regression validation of impacted flows, and stabilization of the CRMNXT integration to ensure reliable ticket tracking across scenarios.",
+                "sprint": "Sprint 4",
+                "sprint_module": "TESTING",
+                "priority": "MEDIUM",
+                "effort_percentage": 20,
+                "acceptanceCriteria": [
+                    "All test cases pass and no regression issues remain"
+                ],
+                "subTimeline": [
+                    {
+                        "task": "Execute functional, integration, and regression testing"
+                    }
+                ]
+            }
+        ]
+    }
+};
   // Trigger analysis
   async function triggerAnalysis() {
     console.log("Triggering AI analysis...");
     setAnalysisOverlay(true);
     try {
-      console.log("Triggering AI analysis... for api");
-      const response = await fetch("http://localhost:3000/api/analyze-task", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({})
-      });
-      const data = await response.json();
+      // console.log("Triggering AI analysis... for api");
+      // const response = await fetch("http://localhost:3000/api/analyze-task", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify({})
+      // });
+      // const data = await response.json();
+      const data = aiAnalysisData;
       setResult(data.structureAnalysisData);
       setShowResults(true);
       if (resultsRef.current) {
