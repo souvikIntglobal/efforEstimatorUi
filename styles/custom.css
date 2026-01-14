@@ -1,0 +1,81 @@
+:root {
+  --primary: #6366f1;
+  --bg-grid: rgba(99, 102, 241, 0.05);
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+  position: relative;
+}
+/* Animated Tech Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(var(--bg-grid) 2px, transparent 2px),
+    linear-gradient(var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+  background-size: 50px 50px, 100px 100px, 100px 100px;
+  z-index: -2;
+}
+/* Floating Bokeh Animation */
+.bokeh {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(60px);
+  animation: float 20s infinite alternate ease-in-out;
+}
+@keyframes float {
+  0% { transform: translate(-10%, -10%) scale(1);}
+  100% { transform: translate(20%, 30%) scale(1.2);}
+}
+.glass-header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.sidebar-closed #sidebar {
+  transform: translateX(-100%);
+}
+.sidebar-closed main {
+  margin-left: 0 !important;
+}
+#sidebar {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+.pro-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  position: relative;
+  overflow: hidden;
+}
+.status-pill {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+.custom-input:focus {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  border-color: #6366f1;
+  outline: none;
+}
+.hidden-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.show-section {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
